@@ -1,0 +1,15 @@
+@import '/src/styles/variables';
+
+.layout {
+  height: 100vh;
+  max-width: 26.25rem;
+  overflow-y: scroll;
+  margin: 0 auto;
+  background-color: $black-900;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

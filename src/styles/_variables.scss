@@ -1,0 +1,60 @@
+// List of all variables to be used in the app
+
+/* colors */
+
+// whites
+$white-900: #f7f7f7;
+$white-700: #b6b2b2;
+$white-500: #9a9898;
+$white-300: #585b59;
+
+// blacks
+$black-900: #000000;
+$black-700: #0e0e0e;
+$black-500: #1e1e1e;
+
+// whites
+$blue-900: #006fff;
+
+
+/* font sizes */
+// 'font' short-hand -> https://css-tricks.com/snippets/css/font-shorthand/
+
+// semi-bold and regular version of 12px/125% 'Source Sans Pro' respectively
+$main-600: 600 0.75rem/125% 'Source Sans Pro'; 
+$main-400: 400 0.75rem/125% 'Source Sans Pro';
+
+// semi-bold and regular version of 16px/125% 'Source Sans Pro' respectively
+$big-600: 600 1rem/125% 'Source Sans Pro'; 
+$big-400: 400 1rem/125% 'Source Sans Pro';
+
+// regular 8px/125% 'Source Sans Pro'
+$small-400: 400 0.5rem/125% 'Source Sans Pro';
+
+
+/* border radii */
+
+// 26px
+$border-900: 1.625rem;
+// 24px
+$border-700: 1.5rem;
+// 20px
+$border-600: 1.25rem;
+// 16px
+$border-500: 1rem;
+// 14px
+$border-400: 0.875rem;
+// 12px
+$border-300: 0.75rem;
+
+
+/* button paddings */
+
+// Padding for buttons in profile
+$primary-padding: 0.75rem 1.75rem;
+// padding for button as tags
+$secondary-padding: 0.5rem 1rem;
+// padding for button in activity
+$tertiary-padding: 0.5rem 0.75rem;
+// padding for smallest buttons such as - reply, more, heart & like-count in feedPost etc
+$complimentary-padding: 0.25rem 0.75rem;
