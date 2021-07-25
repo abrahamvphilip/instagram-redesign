@@ -1,83 +1,81 @@
 // Mixins for easy styling and more (maybe, idk)
-@import './variables';
+@import "./variables";
 
 @mixin primaryButton($active: false) {
-  background-color: $black-700;
-  font: $main-600;
-  color: $white-900;
-  border: none;
-  outline: none;
-  border-radius: $border-500;
-  text-align: center;
-  padding: $primary-padding;
+	background-color: $black-700;
+	font: $main-600;
+	color: $white-900;
+	border: none;
+	outline: none;
+	border-radius: $border-500;
+	text-align: center;
+	padding: $primary-padding;
 
-  @if $active == true {
-    background-color: $blue-900;
-    color: $white-900;
-  }
+	@if $active == true {
+		background-color: $blue-900;
+		color: $white-900;
+	}
 }
 
 @mixin secondaryButton($active: false) {
-  background-color: $black-500;
-  font: $main-600;
-  color: $white-900;
-  border: none;
-  outline: none;
-  border-radius: $border-300;
-  text-align: center;
-  padding: $secondary-padding;
+	background-color: $black-500;
+	font: $main-600;
+	color: $white-900;
+	border: none;
+	outline: none;
+	border-radius: $border-300;
+	text-align: center;
+	padding: $secondary-padding;
 
-  @if $active == true {
-    background-color: $blue-900;
-    color: $white-900;
-  }
+	@if $active == true {
+		background-color: $blue-900;
+		color: $white-900;
+	}
 }
 
 @mixin tertiaryButton($active: false) {
-  background-color: $blue-900;
-  font: $main-600;
-  color: $white-900;
-  border: none;
-  outline: none;
-  border-radius: $border-300;
-  text-align: center;
-  padding: $tertiary-padding;
+	background-color: $blue-900;
+	font: $main-600;
+	color: $white-900;
+	border: none;
+	outline: none;
+	border-radius: $border-300;
+	text-align: center;
+	padding: $tertiary-padding;
 
-  @if $active == true {
-    background-color: $blue-900;
-    color: $white-900;
-  }
+	@if $active == true {
+		background-color: $blue-900;
+		color: $white-900;
+	}
 }
 
 @mixin complimentaryButton {
-  background-color: $black-500;
-  font: $main-600;
-  color: $white-900;
-  border: none;
-  outline: none;
-  border-radius: $border-500;
-  text-align: center;
-  padding: $complimentary-padding;
+	background-color: $black-500;
+	font: $main-600;
+	color: $white-900;
+	border: none;
+	outline: none;
+	border-radius: $border-500;
+	text-align: center;
+	padding: $complimentary-padding;
 }
 
-@mixin buttonStyles ($buttonType , $active: false) {
+@mixin buttonStyles($buttonType, $active: false) {
+	@if $buttonType == "Primary" {
+		@include primaryButton($active);
+	} @else if $buttonType == "Secondary" {
+		@include secondaryButton($active);
+	} @else if $buttonType == "Tertiary" {
+		@include tertiaryButton($active);
+	} @else if $buttonType == "Complimentary" {
+		@include complimentaryButton($active);
+	} @else {
+		@warn 'Please select a valid Button Type';
+	}
+}
 
-  @if $buttonType == "Primary" {
-    @include primaryButton($active);
-  }
-
-  @else if $buttonType == "Secondary" {
-    @include secondaryButton($active)
-  }
-
-  @else if $buttonType == "Tertiary" {
-    @include tertiaryButton($active)
-  }
-
-  @else if $buttonType == "Complimentary" {
-    @include complimentaryButton($active)
-  }
-  @else {
-    @warn 'Please select a valid Button Type';
-  }
+@mixin layout-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
