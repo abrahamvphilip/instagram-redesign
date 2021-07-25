@@ -20,9 +20,9 @@ function Story() {
       <div className="storySection">
         <div className="storySection__container">
           <div className="storyContent">
-            <span style={{border: borderStyle}} className="storyContent__avatar">
+            <div style={{border: borderStyle}} className="storyContent__avatar">
               <img className="avatar" src={storyAvatar} alt="story avatar" />
-            </span>
+            </div>
             <p className="storyContent__name">{storyName}</p>
           </div>
         </div>
