@@ -3,15 +3,15 @@ import './Story.scss'
 
 // assets imports
 import PlusBig from '../../assets/outline/PlusBig.svg'
-import AmJD from '../../assets/images/am-jd.jpg'
-import Behrouz from '../../assets/images/behrouz-sasani.jpg'
-import Carlos from '../../assets/images/carlos-delgado.jpg'
-import Dean from '../../assets/images/dean-amir.jpg'
-import Fabio from '../../assets/images/fabio-henning.jpg'
-import Gunjan from '../../assets/images/gunjan-patel.jpg'
-import Hadis from '../../assets/images/hadis-safari.jpg'
-import Jackson from '../../assets/images/jackson-david.jpg'
-import Juan from '../../assets/images/juan-goyache.jpg'
+// import AmJD from '../../assets/images/am-jd.jpg'
+// import Behrouz from '../../assets/images/behrouz-sasani.jpg'
+// import Carlos from '../../assets/images/carlos-delgado.jpg'
+// import Dean from '../../assets/images/dean-amir.jpg'
+// import Fabio from '../../assets/images/fabio-henning.jpg'
+// import Gunjan from '../../assets/images/gunjan-patel.jpg'
+// import Hadis from '../../assets/images/hadis-safari.jpg'
+// import Jackson from '../../assets/images/jackson-david.jpg'
+// import Juan from '../../assets/images/juan-goyache.jpg'
 
 function Story() {
   
@@ -37,7 +37,7 @@ function Story() {
       storyName="My story"
       borderStyle="1px solid #f7f7f7"
     />
-    <StorySection 
+    {/* <StorySection 
       storyAvatar={AmJD}
       storyName="Am JD"
       borderStyle="none"
@@ -81,7 +81,7 @@ function Story() {
       storyAvatar={Juan}
       storyName="Juan"
       borderStyle="none"
-    />
+    /> */}
   </div>
   )
 }
