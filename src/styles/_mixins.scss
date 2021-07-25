@@ -1,7 +1,7 @@
 // Mixins for easy styling and more (maybe, idk)
 @import "./variables";
 
-@mixin primaryButton($active: false) {
+@mixin primary-button($active: false) {
 	background-color: $black-700;
 	font: $main-600;
 	color: $white-900;
@@ -17,7 +17,7 @@
 	}
 }
 
-@mixin secondaryButton($active: false) {
+@mixin secondary-button($active: false) {
 	background-color: $black-500;
 	font: $main-600;
 	color: $white-900;
@@ -33,7 +33,7 @@
 	}
 }
 
-@mixin tertiaryButton($active: false) {
+@mixin tertiary-button($active: false) {
 	background-color: $blue-900;
 	font: $main-600;
 	color: $white-900;
@@ -49,7 +49,7 @@
 	}
 }
 
-@mixin complimentaryButton {
+@mixin complimentary-button {
 	background-color: $black-500;
 	font: $main-600;
 	color: $white-900;
@@ -60,15 +60,15 @@
 	padding: $complimentary-padding;
 }
 
-@mixin buttonStyles($buttonType, $active: false) {
+@mixin button-styles($buttonType, $active: false) {
 	@if $buttonType == "Primary" {
-		@include primaryButton($active);
+		@include primary-button($active);
 	} @else if $buttonType == "Secondary" {
-		@include secondaryButton($active);
+		@include secondary-button($active);
 	} @else if $buttonType == "Tertiary" {
-		@include tertiaryButton($active);
+		@include tertiary-button($active);
 	} @else if $buttonType == "Complimentary" {
-		@include complimentaryButton($active);
+		@include complimentary-button($active);
 	} @else {
 		@warn 'Please select a valid Button Type';
 	}
@@ -78,4 +78,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+@mixin image-basics {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }

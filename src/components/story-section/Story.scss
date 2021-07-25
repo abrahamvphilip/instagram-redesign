@@ -1,0 +1,46 @@
+@import '/src/styles/mixins';
+
+.storySection {
+  margin-right: 0.5rem;
+
+  &__container {
+    margin: 0;
+
+    .storyContent {
+      width: 3rem;
+      height: auto;
+
+      &__avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: $border-600;
+
+        .avatar {
+          @include image-basics;
+          border-radius: inherit;
+        }
+      }
+
+      &__name {
+        margin-top: 0.125rem;
+        color: $white-900;
+        font: $main-600;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.story {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.25rem 0.25rem 2.5rem;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

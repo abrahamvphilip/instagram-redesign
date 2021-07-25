@@ -3,7 +3,7 @@ import './Layout.scss'
 
 function Layout(props) {
   return (
-    <div className='layout'>
+    <div className="layout">
       { props.children }
     </div>
   )
