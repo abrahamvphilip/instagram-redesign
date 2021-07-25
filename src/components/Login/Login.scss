@@ -1,0 +1,119 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+p {
+	margin: 0;
+}
+.Login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100vh;
+}
+.Login__LoginContainer {
+	@include layout-center;
+
+	width: 74.4%;
+	min-width: 279px;
+	height: fit-content;
+
+	//actual layout, remove align-items in Login and uncomment this one
+	// margin-top: 23.6vh;
+
+	> img {
+		padding: 7px 4.5px;
+		margin-bottom: 1.5625rem;
+	}
+
+	.LoginContainer__divider {
+		width: 100%;
+		border: 1px solid $black-500;
+
+		margin-top: 40px;
+		margin-bottom: 24px;
+	}
+}
+
+.LoginContainer__Form {
+	@include layout-center;
+
+	input {
+		width: 16rem;
+		height: 3.5rem;
+
+		font: $big-400;
+		color: $white-500;
+		background-color: $black-700;
+
+		margin-top: 0.75rem;
+
+		text-align: center;
+		border: none;
+		border-radius: 20px;
+		outline: none;
+
+		&::placeholder {
+			font: $big-400;
+			text-align: center;
+		}
+	}
+
+	.submit {
+		width: 192px;
+		height: 48px;
+
+		font: $big-600;
+		color: $white-900;
+		background-color: $blue-900;
+
+		margin-top: 1.5rem;
+
+		border: none;
+		border-radius: 1.125rem;
+		outline: none;
+		text-align: center;
+	}
+}
+
+.LoginContainer__LoginOptions {
+	> p {
+		font: $main-400;
+		color: $white-300;
+		text-align: center;
+	}
+
+	.LoginOptions__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: fit-content;
+		padding: 0.5rem 1rem;
+		border-radius: 1rem;
+
+		background-color: $black-700;
+
+		p {
+			font: $main-600;
+			color: white;
+			margin-left: 0.5rem;
+		}
+	}
+
+	.row1 {
+		display: flex;
+		align-items: center;
+		margin-top: 1rem;
+
+		.btn__google {
+			margin-right: 0.75rem;
+		}
+	}
+	.row2 {
+		display: flex;
+		justify-content: center;
+		margin-top: 0.75rem;
+	}
+}
