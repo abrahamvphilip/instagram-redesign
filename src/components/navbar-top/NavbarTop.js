@@ -11,20 +11,20 @@ function NavbarTop() {
   return (
     <div className="navbarTop">
       <div className="navbarTop__left">
-        <div className="iconBox">
+        <span className="iconBox">
           <img src={Setting} alt="settings icon" />
-        </div>
+        </span>
       </div>
       <div className="navbarTop__right">
-        <div className="iconBox">
+        <span className="iconBox">
           <img src={Search} alt="seearch icon" />
-        </div>
-        <div className="iconBox">
+        </span>
+        <span className="iconBox">
           <img src={Heart} alt="heart icon" />
-        </div>
-        <div className="iconBox">
+        </span>
+        <span className="iconBox">
           <img src={Message} alt="message icon" />
-        </div>
+        </span>
       </div>
     </div>
   )
