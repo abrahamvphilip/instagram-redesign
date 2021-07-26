@@ -50,6 +50,7 @@
   
   .feedPost {
     margin: 0.75rem 0;
+    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.16));
     -webkit-filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.16));
     
     img {
@@ -117,6 +118,7 @@
     &__left {
       display: flex;
       align-items: center;
+      overflow: hidden;
 
       &--avatar {
         width: 1.5rem;
@@ -147,7 +149,7 @@
         font: $main-400;
         color: $white-900;
         margin-left: 0.25rem;
-        max-width: 13rem;
+        max-width: 11rem;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
@@ -158,6 +160,7 @@
 
       &--more {
         @include button-styles("Complimentary");
+        margin-left: 1rem;
       }
     }
   }
