@@ -1,0 +1,164 @@
+@import '../../styles/mixins';
+
+.post {
+  background-color: $black-700;
+  color: $white-900;
+  margin: 0 1.5rem 1rem 1.5rem;
+  padding: 1rem;
+  border-radius: $border-700;
+
+  .postInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__left {
+      display: flex;
+      align-items: center;
+      
+      &--avatar {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+        
+        img {
+          @include image-basics;
+          border-radius: $border-400;
+        }
+      }
+
+      &--userInfo {
+
+        h6 {
+          font: $main-600;
+        }
+
+        p {
+          font: $small-400;
+        }
+      }
+    }
+
+    &__right {
+
+      .tripledotIcon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+  
+  .feedPost {
+    margin: 0.75rem 0;
+    -webkit-filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.16));
+    
+    img {
+      @include image-basics;
+      max-height: 20rem;
+      border-radius: $border-600;
+    }
+  }
+
+  .engagementInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+
+    &__left {
+      display: flex;
+      align-items: center;
+        
+      &--likes {
+        display: flex;
+        align-items: center;
+        background-color: $black-500;
+        padding: $tertiary-padding;
+        margin-right: 1rem;
+        border-radius: $border-500;
+
+        .heartIcon {
+          width: 1rem;
+          height: 1rem;
+          margin-right: 0.25rem;
+        }
+
+        p {
+          font: $main-400;
+        }
+      }
+      
+      .chatIcon {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1rem;
+      }
+      
+      .sendIcon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &__right {
+
+      .bookmarkIcon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+
+  .commentInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__left {
+      display: flex;
+      align-items: center;
+
+      &--avatar {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        img {
+          @include image-basics;
+          border-radius: $border-700;
+          border: 1px solid $white-900;
+        }
+      }
+
+      .overlap {
+        z-index: 3;
+      }
+      
+      .overlap1 {
+        margin-left: -0.75rem;
+        z-index: 2;
+      }
+
+      .overlap2 {
+        margin-left: -0.75rem;
+        z-index: 1;
+      }
+
+      p {
+        font: $main-400;
+        color: $white-900;
+        margin-left: 0.25rem;
+        max-width: 13rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+
+    &__right {
+
+      &--more {
+        @include button-styles("Complimentary");
+      }
+    }
+  }
+}

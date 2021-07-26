@@ -68,7 +68,7 @@
 	} @else if $buttonType == "Tertiary" {
 		@include tertiary-button($active);
 	} @else if $buttonType == "Complimentary" {
-		@include complimentary-button($active);
+		@include complimentary-button;
 	} @else {
 		@warn 'Please select a valid Button Type';
 	}
