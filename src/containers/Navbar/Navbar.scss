@@ -1,6 +1,9 @@
+@import "../../styles/variables";
+
 .navbar {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	margin: 2rem 1.5rem 1.5rem 1.5rem;
 
 	&__right {
@@ -18,6 +21,54 @@
 		img {
 			width: 100%;
 			height: 100%;
+		}
+	}
+
+	.search {
+		position: relative;
+		margin-left: 55%; // change this for spacing
+		transition: all 0.3s;
+
+		input {
+			width: 1.75rem;
+			height: 1.75rem;
+
+			opacity: 0;
+			background: $black-500;
+			border-radius: $border-300;
+			font: $main-600;
+			line-height: 1.75rem;
+			color: $white-300;
+
+			border: none;
+			outline: none;
+
+			transition: all 0.3s;
+
+			&::placeholder {
+				color: $white-300;
+			}
+		}
+
+		.iconBox {
+			position: absolute;
+			left: 0.25rem;
+			top: 0.25rem;
+			z-index: 1;
+
+			transition: all 0.3s;
+		}
+	}
+
+	.search__active {
+		margin: 0;
+		input {
+			padding: 4px 10px 4px 40px;
+			width: 48vw;
+			opacity: 1;
+		}
+		.iconBox {
+			left: 0.75rem;
 		}
 	}
 }

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Navbar.scss";
 
 import Setting from "../../assets/outline/Setting.svg";
@@ -8,37 +9,106 @@ import Message from "../../assets/outline/Message.svg";
 import ArrowLeft from "../../assets/outline/Arrow-Left.svg";
 
 export default function Navbar(props) {
+	const path = props.location.pathname;
+	let type = "default";
+
+	if (path.includes("profile")) type = "profile";
+	else if (path.includes("store")) type = "store";
+
 	return (
 		<section className="navbar">
-			{props?.type === "profile" ? (
-				<Style.Profile />
-			) : (
-				<Style.Classic {...props} />
-			)}
+			{type === "profile" ? <Types.Profile /> : <Types.Default {...type} />}
 		</section>
 	);
 }
 
-const SettingComponent = () => {
+/**
+ * type:
+ * {
+ * 	"default" - home, activity
+ * 	"store" - store, products
+ *  "profile" - profile
+ * 	}
+ */
+
+const Types = {
+	Default: ({ type = "default" }) => {
+		const history = useHistory();
+		const [active, setActive] = useState(false);
+
+		return (
+			<>
+				<section className="navbar__left">
+					{type === "default" && !active ? (
+						<SettingComponent />
+					) : (
+						<BackComponent {...{ setActive, history }} />
+					)}
+				</section>
+
+				<SearchComponent {...{ active, setActive, history }} />
+				<section className="navbar__right">
+					<HeartComponent />
+					<MessageComponent />
+				</section>
+			</>
+		);
+	},
+
+	Profile: () => {
+		return (
+			<>
+				<section className="navbar__left">
+					<SettingComponent />
+				</section>
+				<section className="navbar__main">
+					<MainProfileComponent />
+				</section>
+			</>
+		);
+	},
+};
+
+const SearchComponent = ({ active, setActive, history }) => {
+	const ref = useRef();
+	const classList = `search ${active ? "search__active" : ""}`;
+
+	const handler = () => {
+		if (!active) {
+			ref.current.classList.add("search__active");
+			setActive(true);
+			history.push("/search");
+		}
+	};
+
 	return (
-		<div className="settings iconBox">
-			<img src={Setting} alt="settings icon" />
+		<div ref={ref} className={classList} onClick={handler}>
+			<label htmlFor="search">
+				<div className="iconBox">
+					<img src={Search} alt="search icon" />
+				</div>
+			</label>
+			<input id="search" type="text" placeholder="Search" />
 		</div>
 	);
 };
 
-const BackComponent = () => {
+const BackComponent = ({ setActive, history }) => {
+	const handler = () => {
+		setActive(false);
+		history.goBack();
+	};
 	return (
-		<div className="back iconBox">
+		<div className="back iconBox" onClick={handler}>
 			<img src={ArrowLeft} alt="" />
 		</div>
 	);
 };
 
-const SearchComponent = () => {
+const SettingComponent = () => {
 	return (
-		<div className="search iconBox">
-			<img src={Search} alt="seearch icon" />
+		<div className="settings iconBox">
+			<img src={Setting} alt="settings icon" />
 		</div>
 	);
 };
@@ -65,35 +135,4 @@ const MainProfileComponent = () => {
 			<p>kenmyersofficial</p>
 		</div>
 	);
-};
-
-const Style = {
-	Classic: ({ type = "classic", active = "false" }) => {
-		return (
-			<>
-				<section className="navbar__left">
-					{type === "classic" ? <SettingComponent /> : <BackComponent />}
-				</section>
-
-				<section className="navbar__right">
-					<SearchComponent {...active} />
-					<HeartComponent />
-					<MessageComponent />
-				</section>
-			</>
-		);
-	},
-
-	Profile: () => {
-		return (
-			<>
-				<section className="navbar__left">
-					<SettingComponent />
-				</section>
-				<section className="navbar__main">
-					<MainProfileComponent />
-				</section>
-			</>
-		);
-	},
 };
