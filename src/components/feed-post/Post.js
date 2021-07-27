@@ -8,6 +8,7 @@ import ChatSmall from '../../assets/filled/ChatSmall.svg'
 import SendSmall from '../../assets/filled/SendSmall.svg'
 import BookmarkSmall from '../../assets/outline/BookmarkSmall.svg'
 
+
 function Post() {
   return (
     <div className="post">
